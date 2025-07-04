@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Task Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Advanced Task Management System</h1>
+
+    <!-- Task Input Form -->
+    <div class="controls">
+        <input type="text" id="taskInput" placeholder="Enter new task">
+        <input type="date" id="dueDate">
+        <select id="priority">
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <input type="text" id="categoryInput" placeholder="Category">
+        <button id="addTaskBtn">Add Task</button>
+    </div>
+
+    <!-- Search and Sort Controls -->
+    <div class="extra-controls">
+        <input type="text" id="searchInput" placeholder="Search tasks...">
+        <select id="sortOption">
+            <option value="none" selected>Sort By</option>
+            <option value="date">Due Date</option>
+            <option value="priority">Priority</option>
+        </select>
+        <button onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+        <button onclick="filterTasks('All')">All</button>
+        <button onclick="filterTasks('Completed')">Completed</button>
+        <button onclick="filterTasks('Pending')">Pending</button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div id="progress" class="progress"></div>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+
+    <!-- Export Button -->
+    <button onclick="exportTasks()">Export Tasks (JSON)</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
